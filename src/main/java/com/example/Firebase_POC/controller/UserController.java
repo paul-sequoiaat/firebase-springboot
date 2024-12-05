@@ -37,7 +37,7 @@ public class UserController {
         return ResponseEntity.ok().body(response);
     }
 
-    @PostMapping
+    @PostMapping("/token")
     public ResponseEntity<Response> saveFirebaseToken(
             @RequestBody FirebaseRegistrationRequestDTO firebaseRegistrationRequestDTO
     ) throws BadRequestException {
