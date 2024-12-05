@@ -1,6 +1,8 @@
 package com.example.Firebase_POC.controller;
 
 import com.example.Firebase_POC.dto.FirebaseRegistrationRequestDTO;
+import com.example.Firebase_POC.dto.LoginRequestDTO;
+import com.example.Firebase_POC.dto.LoginResponseDTO;
 import com.example.Firebase_POC.dto.Response;
 import com.example.Firebase_POC.dto.UserRequestDTO;
 import com.example.Firebase_POC.service.UserService;
@@ -47,6 +49,20 @@ public class UserController {
         response.setStatusCode(HttpStatus.OK.value());
         response.setMessage("Firebase token saved");
         logger.info("END - save firebase token");
+        return ResponseEntity.ok().body(response);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<Response> login(
+            @RequestBody LoginRequestDTO loginRequestDTO
+            ) throws BadRequestException {
+        logger.info("START - login");
+        LoginResponseDTO loginResponse = userService.login(loginRequestDTO);
+        Response response = new Response();
+        response.setStatusCode(HttpStatus.OK.value());
+        response.setMessage("Login successful");
+        response.setData(loginResponse);
+        logger.info("END - login");
         return ResponseEntity.ok().body(response);
     }
 }
