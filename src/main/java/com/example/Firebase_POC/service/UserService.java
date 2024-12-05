@@ -39,7 +39,9 @@ public class UserService {
     }
 
     private User getUserByEmail(String email) throws BadRequestException {
-        return userRepository.findByEmailIgnoreCase(email).orElseThrow(() -> new BadRequestException("User with the specified email does not exist"));
+        return userRepository.findByEmailIgnoreCase(email).orElseThrow(
+                () -> new BadRequestException("User with the specified email does not exist")
+        );
     }
 
     public LoginResponseDTO login(LoginRequestDTO requestDTO) throws BadRequestException {
