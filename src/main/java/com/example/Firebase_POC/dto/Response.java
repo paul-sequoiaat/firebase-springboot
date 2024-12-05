@@ -1,5 +1,8 @@
 package com.example.Firebase_POC.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Response {
     private int statusCode;
     private String message;
