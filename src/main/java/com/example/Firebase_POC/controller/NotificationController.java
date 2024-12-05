@@ -3,7 +3,7 @@ package com.example.Firebase_POC.controller;
 import com.example.Firebase_POC.dto.Response;
 import com.example.Firebase_POC.service.NotificationService;
 import com.google.firebase.messaging.FirebaseMessagingException;
-import dto.NotificationRequestDTO;
+import com.example.Firebase_POC.dto.NotificationRequestDTO;
 import org.apache.coyote.BadRequestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

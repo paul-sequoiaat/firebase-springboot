@@ -1,4 +1,4 @@
-package dto;
+package com.example.Firebase_POC.dto;
 
 public class NotificationRequestDTO {
     private String userId;

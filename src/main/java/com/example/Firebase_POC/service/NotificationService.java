@@ -2,7 +2,7 @@ package com.example.Firebase_POC.service;
 
 import com.example.Firebase_POC.entity.User;
 import com.google.firebase.messaging.FirebaseMessagingException;
-import dto.NotificationRequestDTO;
+import com.example.Firebase_POC.dto.NotificationRequestDTO;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
