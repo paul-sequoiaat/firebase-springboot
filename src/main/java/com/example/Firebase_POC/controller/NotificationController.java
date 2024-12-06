@@ -30,10 +30,10 @@ public class NotificationController {
             ) throws BadRequestException, FirebaseMessagingException {
         logger.info("START - send notification to user - {}", notificationRequestDTO.getUserId());
         notificationService.sendNotification(notificationRequestDTO);
-        logger.info("END - send notification to device - {}", notificationRequestDTO.getUserId());
         Response response = new Response();
         response.setStatusCode(HttpStatus.OK.value());
         response.setMessage("Notification sent");
+        logger.info("END - send notification to user - {}", notificationRequestDTO.getUserId());
         return ResponseEntity.ok().body(response);
     }
 }
